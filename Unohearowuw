@@ -14,7 +14,23 @@ local Window = Rayfield:CreateWindow({
 })
 
 local MainTab = Window:CreateTab("Main", 4483362458)
+MainTab:CreateButton({
+    Name = "Copy link discord",
+    Callback = function()
+        if setclipboard then
+            setclipboard("https://discord.gg/5uVYwg8qe")
+        elseif toclipboard then
+            toclipboard("https://discord.gg/5uVYwg8qe")
+        end
 
+        Rayfield:Notify({
+            Title = "Thành công",
+            Content = "Đã copy link Discord vào clipboard!",
+            Duration = 3,
+            Image = 4483362458
+        })
+    end
+})
 -- Variables
 local AutoRangeAtom = false
 local AutoDanhThuong = false
@@ -205,7 +221,7 @@ MainTab:CreateToggle({
                         end
                     end)
 
-                    task.wait(0.2)
+                    task.wait(0.3)
                 end
             end)
         end
@@ -353,7 +369,7 @@ MainTab:CreateToggle({
                                     or hum.Health <= 0
 
                                 if AutoStartDungeon then
-                                    task.wait(2.8)
+                                    task.wait(3.85)
                                     pcall(function()
                                         StartDungeon:InvokeServer()
                                     end)
