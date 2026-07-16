@@ -26,7 +26,7 @@ local AutoNextArea = false
 -- ==================== TOGGLE ====================
 
 MainTab:CreateToggle({
-    Name = "Auto Range Atom",
+    Name = "Auto Range Atom fix",
     CurrentValue = false,
     Flag = "AutoRangeAtom",
     Callback = function(Value)
